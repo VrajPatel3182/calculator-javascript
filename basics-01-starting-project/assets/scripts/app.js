@@ -1,5 +1,6 @@
 const defaultResults = 0;
 let currentResults = defaultResults;
+let logEntries = [];
 
 //Gets input from input fields
 function getUserInput(){
@@ -17,6 +18,14 @@ function add(){
   const initialResult = currentResults;
   currentResults += enteredNumber;
   createAndWriteLog('+', initialResult, enteredNumber);
+  const logEntry = {
+    operators: 'ADD',
+    number: enteredNumber,
+    result: currentResults
+  };
+  logEntries.push(logEntry);
+  //logEntries.push(logEntry.operators); to access the objects value from object
+  console.log(logEntries);
 }
 
 function subtract(){
